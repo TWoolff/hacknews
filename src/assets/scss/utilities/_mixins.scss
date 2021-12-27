@@ -1,0 +1,7 @@
+@mixin first-break-point {
+  @media (max-width: 1442px) { @content; }
+}
+
+@mixin second-break-point {
+  @media (max-width: 1100px) { @content; }
+}

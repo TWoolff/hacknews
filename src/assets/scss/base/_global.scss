@@ -1,0 +1,36 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-image: -webkit-gradient(linear, right top, left bottom, from(#f5f6f0), color-stop(#f1f2e7), color-stop(#edeedd), color-stop(#e9ead4), to(#e6e6ca));
+  background-image: -o-linear-gradient(right top, #f5f6f0, #f1f2e7, #edeedd, #e9ead4, #e6e6ca);
+  background-image: linear-gradient(to left bottom, #f5f6f0, #f1f2e7, #edeedd, #e9ead4, #e6e6ca);
+  height: 100%;
+  font-family: $base-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  counter-reset: section;
+}
+
+main {
+  margin: 1rem;
+}
+
+section {
+  color: $black;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+p { 
+  margin: 0;
+}
