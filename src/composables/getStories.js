@@ -6,8 +6,8 @@ const getStories = () => {
   const stories = ref([])
 
   onMounted(async () => {
-    stories.value = await axios.get(`${baseUrl}/topstories.json?print=pretty&limitToFirst=10&orderBy="$key"`)
-  }) 
+    stories.value = await axios.get(`${baseUrl}/topstories.json?print=pretty&limitToFirst=19&orderBy="$key"`)
+  })
   
   return { stories }
 }
