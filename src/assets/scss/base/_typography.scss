@@ -12,6 +12,11 @@ h2 {
   max-width: 12rem;
   display: inline-block;
   text-align: right;
+
+  @include mobile {
+    font-size: 20px;
+    max-width: 10rem;
+  }
 }
 
 h3 {

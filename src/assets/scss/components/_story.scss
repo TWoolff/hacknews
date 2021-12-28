@@ -18,6 +18,10 @@
       counter-increment: section;
       content: counter(section) " ";
       text-align: left;
+
+      @include mobile {
+        font-size: 90px;
+      }
     }
   }
 
