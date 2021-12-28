@@ -2,7 +2,7 @@ import { onMounted, ref } from 'vue'
 import axios from 'axios'
 
 const getStories = () => {
-  const baseUrl = 'https://hacker-news.firebaseio.com/v0/'
+  const baseUrl = 'https://hacker-news.firebaseio.com/v0'
   const stories = ref([])
 
   onMounted(async () => {

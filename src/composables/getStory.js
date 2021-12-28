@@ -2,7 +2,7 @@ import { onMounted, ref } from 'vue'
 import axios from 'axios'
 
 const getStory = (id) => {
-  const baseUrl = 'https://hacker-news.firebaseio.com/v0/'
+  const baseUrl = 'https://hacker-news.firebaseio.com/v0'
   const story = ref(null)
   const photos = ref([
     '/img/1.jpg',
@@ -18,13 +18,13 @@ const getStory = (id) => {
     '/img/11.jpg',
     '/img/12.jpg',
   ])
+  const postScore = ref(null)
 
   onMounted(async () => {
     story.value = await axios.get(`${baseUrl}/item/${id}.json`)
   })
-
   
-  return { story, photos }
+  return { story, photos, postScore }
 }
 
 export default getStory
