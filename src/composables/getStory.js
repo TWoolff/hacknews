@@ -18,13 +18,13 @@ const getStory = (id) => {
     '/img/11.jpg',
     '/img/12.jpg',
   ])
-  const postScore = ref(null)
 
   onMounted(async () => {
     story.value = await axios.get(`${baseUrl}/item/${id}.json`)
   })
   
-  return { story, photos, postScore }
+  
+  return { story, photos }
 }
 
 export default getStory

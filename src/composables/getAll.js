@@ -6,8 +6,12 @@ const getStories = () => {
   const stories = ref([])
 
   onBeforeMount(async () => {
-    stories.value = await axios.get(`${baseUrl}/topstories.json?print=pretty&limitToFirst=19&orderBy="$key"`)
+    stories.value = await axios.get(`${baseUrl}/topstories.json`)
+    // ForEach(id) -> await axios.get(`${baseUrl}/item/${id}.json`)
+    // ForEach(by) -> await axios.get(`${baseUrl}/user/${id}.json`)
   })
+
+  // Computed: random 10 -> sort based on story score
   
   return { stories }
 }
