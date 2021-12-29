@@ -1,35 +1,37 @@
 <template>
-  <transition-group appear tag="section" @before-enter="beforeEnter" @enter="enter">
-    <Story v-for="story in stories.data" :key="story" :id="story" />
-  </transition-group>
+  <transition name="fade">
+    <section>
+      <div v-if="stories.length >= 10" class="grid">
+        <article v-for="story in stories" :key="story" class="story">
+          <span></span>
+          <h2><a :href='story.data.url'>{{ story.data.title }}</a></h2>
+          <p>Timestamp: {{ story.data.time }}</p>
+          <p>Story Score: {{ story.data.score }}</p>
+          <br>
+          <p>Author: {{ story.data.by }}</p>
+          <p>Karma Score: {{ story.data.user.data.karma }}</p>
+          <div class="story-image" :style="{backgroundImage: `url(${images[Math.floor(Math.random() * images.length)]})`}"></div>
+        </article>
+      </div>
+      <div v-else>
+        <Spinner />
+      </div>
+    </section>
+  </transition>
 </template>
 
 <script>
-import gsap from 'gsap'
 import getStories from '@/composables/getStories'
-import Story from '@/components/Story.vue'
+import Spinner from '@/components/Spinner.vue'
 
 export default {
   name: 'App',
-  components: { Story },
+  components: { Spinner },
   setup () {
     const stories = getStories()
+    const images = getStories()
 
-    const beforeEnter = (el) => {
-      el.style.opacity = 0
-      el.style.transform = 'translateY(100px)'
-    }
-    const enter = (el, done) => {
-      gsap.to(el, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        onComplete: done,
-        delay: el.dataset.index * 0.2
-      })
-    }
-   
-    { return beforeEnter, enter, stories }
+    { return images, stories }
   }
 }
 </script>
