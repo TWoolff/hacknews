@@ -5,9 +5,9 @@
 }
 
 html, body {
-  background-image: -webkit-gradient(linear, right top, left bottom, from(#f5f6f0), color-stop(#f1f2e7), color-stop(#edeedd), color-stop(#e9ead4), to(#e6e6ca));
-  background-image: -o-linear-gradient(right top, #f5f6f0, #f1f2e7, #edeedd, #e9ead4, #e6e6ca);
-  background-image: linear-gradient(to left bottom, #f5f6f0, #f1f2e7, #edeedd, #e9ead4, #e6e6ca);
+  background-image: -webkit-gradient(linear, right top, left bottom, from($bg1), color-stop($bg2), color-stop($bg3), color-stop($bg4), to($bg5));
+  background-image: -o-linear-gradient(right top, $bg1, $bg2, $bg3, $bg4, $bg5);
+  background-image: linear-gradient(to left bottom, $bg1, $bg2, $bg3, $bg4, $bg5);
   height: 100%;
   font-family: $base-font;
   -webkit-font-smoothing: antialiased;
@@ -36,8 +36,4 @@ section {
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
   }
-}
-
-p { 
-  margin: 0;
 }
