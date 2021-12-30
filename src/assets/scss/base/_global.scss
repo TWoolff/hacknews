@@ -5,6 +5,7 @@
 }
 
 html, body {
+  box-sizing: border-box;
   background-image: -webkit-gradient(linear, right top, left bottom, from($bg1), color-stop($bg2), color-stop($bg3), color-stop($bg4), to($bg5));
   background-image: -o-linear-gradient(right top, $bg1, $bg2, $bg3, $bg4, $bg5);
   background-image: linear-gradient(to left bottom, $bg1, $bg2, $bg3, $bg4, $bg5);
@@ -19,7 +20,7 @@ html, body {
 }
 
 main {
-  margin: 1rem;
+  padding: 1rem;
 }
 
 section {
