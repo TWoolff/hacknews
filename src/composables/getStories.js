@@ -10,14 +10,16 @@ const getStories = () => {
     const storyIds = await axios.get(`${baseUrl}/topstories.json`)
     const arr = [];
 
-    while (arr.length < 10) { 
+    // fill temp array with 10 random top story IDs
+    while (arr.length < 10) {
       const randomItem = Math.floor(Math.random() * storyIds.data.length)
       if (arr.indexOf(randomItem) < 0) {
         arr.push(randomItem);
       }
     }
 
-    for (let i = 0; i < arr.length; i++) {
+    // add story data and user data to story IDs
+    for (let i = 0; i < arr.length; i++) { 
       const storyId = storyIds.data[arr[i]]
       const story = await axios.get(`${baseUrl}/item/${storyId}.json`)
       story.data.user = await axios.get(`${baseUrl}/user/${story.data.by}.json`)
@@ -30,7 +32,8 @@ const getStories = () => {
   return { stories, images }
 }
 
-const compareScore = (a, b) => {
+// compare and sort stories based on story score
+const compareScore = (a, b) => { 
   if (a.data.score > b.data.score) {
     return -1
   }

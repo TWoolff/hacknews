@@ -1,0 +1,23 @@
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: $black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  .spinner {
+    display: block;
+    margin: 20rem auto;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    border-top-color: $bg5;
+    animation: spin 1s ease infinite;
+  }
+
+  @keyframes spin {
+    to { -webkit-transform: rotateZ(360deg);  }
+  }
+}

@@ -12,19 +12,19 @@
         <div class="story-image" :style="{backgroundImage: `url(${images[Math.floor(Math.random() * images.length)]})`}"></div>
       </article>
     </div>
-    <div v-else>
-      <Spinner />
+    <div v-else> 
+      <Loading />
     </div>
   </section>
 </template>
 
 <script>
 import getStories from '@/composables/getStories'
-import Spinner from '@/components/Spinner.vue'
+import Loading from '@/components/Loading.vue'
 
 export default {
   name: 'App',
-  components: { Spinner },
+  components: { Loading },
   setup () {
     const stories = getStories()
     const images = getStories()
